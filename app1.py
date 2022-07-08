@@ -196,11 +196,11 @@ elif rad == "About us":
     
     about = sm.selectbox("About Dataset and developer",["Dataset Source","About Developer"])
     if about == "Dataset Source":
-        sm.write("Training Datasets Taken from Kaggle and their link is given below")
+        sm.write("Training Datasets has been taken from Kaggle and their link is given below")
         sm.write("""Diabetes Dataset - https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database """)
         sm.write("Heart Disease Dataset - https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset ")
         sm.write(' Parkinsons Data Set - https://www.kaggle.com/datasets/nidaguler/parkinsons-data-set')
-        sm.write("For see read and download code plz visite my github link \n https://github.com/LalitMahale/Multiple-Disease-Prediction-System.git")
+        sm.write("For read and download code plz visite my github link \n https://github.com/LalitMahale/Multiple-Disease-Prediction-System.git")
         sm.write("Follow at Linkdin - https://www.linkedin.com/in/lalitmahale1997 ")
     else:
         sm.write("""Hi, I'm Lalit Mahale, I have done My Post Graduate Diploma in Artificial Intelligence in Artificial Intelligent from CDAC (act's) Pune """)
