@@ -9,7 +9,7 @@ par_model = pickle.load(open(r"C:\Users\lalit\Desktop\Projects\multi project in 
 sm.title("Multiple Disease Prediction System")
 
 
-menu = sm.sidebar.selectbox("Multiple Disease Prediction System", ["Diabetes Prediction","Heart Disease Prediction","Parkinsons Prediction"])
+menu = sm.sidebar.selectbox("Multiple Disease Prediction System", ["Diabetes Prediction","Heart Disease Prediction","Parkinsons Prediction","BMI Calculator"])
 if (menu == "Diabetes Prediction" ):
     # page title
     sm.title("Diabetes Prediction")
@@ -58,13 +58,13 @@ if (menu == "Heart Disease Prediction"):
     
     chol = sm.text_input('Serum Cholestoral in mg/dl')
     
-    fbs = sm.text_input('Fasting Blood Sugar > 120 mg/dl')
+    fbs = sm.selectbox('Fasting Blood Sugar > 120 mg/dl (1 = true; 0 = false)',[0,1])
     
     restecg = sm.text_input('Resting Electrocardiographic results')
     
     thalach = sm.text_input('Maximum Heart Rate achieved')
     
-    exang = sm.text_input('Exercise Induced Angina')
+    exang = sm.selectbox('Exercise Induced Angina (1 = yes; 0 = no)',[0,1])
     
     oldpeak = sm.text_input('ST depression induced by exercise')
     
@@ -72,7 +72,7 @@ if (menu == "Heart Disease Prediction"):
     
     ca = sm.text_input('Major vessels colored by flourosopy')
     
-    thal = sm.text_input('thal: 0 = normal; 1 = fixed defect; 2 = reversable defect')
+    thal = sm.selectbox('thal: 0 = normal; 1 = fixed defect; 2 = reversable defect',[0,1,2])
     
     
      
@@ -164,11 +164,19 @@ if (menu == "Parkinsons Prediction"):
         
     sm.success(parkinsons_diagnosis)
 
+# =============================================================================
+# 
+# =============================================================================
 
+if (menu == "BMI Calculator"):
+    weight = sm.number_input("Weight (Kg)")
+    height = sm.number_input("height (cm)")
     
-
-
-
+    if sm.button("Calculate"):
+        
+        bmi = (weight / (height * height)) * 10000
+    
+        sm.success(bmi)
 
 
 
@@ -178,22 +186,63 @@ if (menu == "Parkinsons Prediction"):
 # 
 # =============================================================================
 
-rad = sm.sidebar.radio("Navigation",["Home","About us","Contact us"])
+rad = sm.sidebar.radio("Navigation",["Home","About us","Contact us","Help"])
 
 if rad == "Home":
     sm.write("Thanks for using this .....")
 
 elif rad == "About us":
-    sm.write("""Hi, I'm Lalit Mahale who develop this Multi disease application for help to people
-             in their life """)
-    sm.write("Training Datasets Taken from Kaggle and their link is given below")
-    sm.write("""Diabetes Dataset - https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database """)
-    sm.write("Heart Disease Dataset - https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset ")
-    sm.write(' Parkinsons Data Set - https://www.kaggle.com/datasets/nidaguler/parkinsons-data-set')
-    sm.write("For see read and download code plz visite my github link \n https://github.com/LalitMahale/Multiple-Disease-Prediction-System.git")
-    sm.write("Follow at Linkdin - https://www.linkedin.com/in/lalitmahale1997 ")
-
+    
+    about = sm.selectbox("About Dataset and developer",["Dataset Source","About Developer"])
+    if about == "Dataset Source":
+        sm.write("Training Datasets Taken from Kaggle and their link is given below")
+        sm.write("""Diabetes Dataset - https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database """)
+        sm.write("Heart Disease Dataset - https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset ")
+        sm.write(' Parkinsons Data Set - https://www.kaggle.com/datasets/nidaguler/parkinsons-data-set')
+        sm.write("For see read and download code plz visite my github link \n https://github.com/LalitMahale/Multiple-Disease-Prediction-System.git")
+        sm.write("Follow at Linkdin - https://www.linkedin.com/in/lalitmahale1997 ")
+    else:
+        sm.write("""Hi, I'm Lalit Mahale, I have done My Post Graduate Diploma in Artificial Intelligence in Artificial Intelligent from CDAC (act's) Pune """)
+    
+elif rad == "Contact us":
+    sm.write("Email:- mahalelalit45@gmail.com")
     
 else:
-    sm.write("Email:- mahalelalit45@gmail.com")
+    
+    helps = sm.selectbox("Help about Data information",["Diabetes Prediction","Heart Disease Prediction","Parkinsons Prediction"])
+    
+    if helps == "Diabetes Prediction":
+            sm.write('''Pregnancies : - Number of times pregnant ''')
+            sm.write('fasting blood sugar :- ( 120 mg/dl) (1 = true; 0 = false)')
+            sm.write('BloodPressure :- Diastolic blood pressure (mm Hg)')
+            sm.write('SkinThickness :- Triceps skin fold thickness (mm)')
+            sm.write('Insulin :- 2-Hour serum insulin (mu U/ml)')
+            sm.write('BMI :- Body mass index')    
+            sm.write('Diabetes Pedigree Function :-  Diabetes pedigree function')
+
+    if helps == "Heart Disease Prediction":
+            sm.write('''resting blood pressure :-  in mm Hg on admission to the hospital  ''')
+            sm.write(''' chest pain type (4 values) ''')         
+            sm.write(''' chest pain type (4 values) ''')         
+            sm.write(''' fasting blood sugar > 120 mg/dl ''')         
+            sm.write(''' resting electrocardiographic results (values 0,1,2)''')         
+            sm.write(''' oldpeak = ST depression induced by exercise relative to rest ''')         
+            sm.write(''' the slope of the peak exercise ST segment ''')         
+            sm.write(''' number of major vessels (0-3) colored by flourosopy ''')         
+            sm.write(''' thal: 0 = normal; 1 = fixed defect; 2 = reversable defect ''')         
+
+
+                
+                
+    if helps == "Parkinsons Prediction":
+            sm.write('''MDVP:Fo(Hz) - Average vocal fundamental frequency''')
+            sm.write('''MDVP:Fhi(Hz) - Maximum vocal fundamental frequency ''')
+            sm.write('''MDVP:Fhi(Hz) - Maximum vocal fundamental frequency''')
+            sm.write('''MDVP:Jitter(%),MDVP:Jitter(Abs),MDVP:RAP,MDVP:PPQ,Jitter:DDP - Several measures of variation in fundamental frequency''')
+            sm.write('''MDVP:Shimmer,MDVP:Shimmer(dB),Shimmer:APQ3,Shimmer:APQ5,MDVP:APQ,Shimmer:DDA - Several measures of variation in amplitude ''')
+            sm.write('''NHR,HNR - Two measures of ratio of noise to tonal components in the voice''')
+            sm.write('''status - Health status of the subject (one) - Parkinson's, (zero) - healthy ''')
+            sm.write('''RPDE,D2 - Two nonlinear dynamical complexity measures''')
+            sm.write('''DFA - Signal fractal scaling exponent''')
+            sm.write('''spread1,spread2,PPE - Three nonlinear measures of fundamental frequency variation''')
 
