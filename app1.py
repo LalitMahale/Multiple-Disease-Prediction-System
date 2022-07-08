@@ -8,7 +8,7 @@ par_model = pickle.load(open("parkinsons.sav","rb"))
 
 sm.title("Multiple Disease Prediction System")
 
-sm.image("heart.png")
+sm.image("multiimage.png")
 
 
 menu = sm.sidebar.selectbox("Multiple Disease Prediction System", ["Diabetes Prediction","Heart Disease Prediction","Parkinsons Prediction","BMI Calculator"])
