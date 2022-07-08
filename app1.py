@@ -1,9 +1,9 @@
 import streamlit as sm
 import pickle
 
-dia_model = pickle.load(open(r"C:\Users\lalit\Desktop\Projects\multi project in one\Multiple Disease Prediction System\ML models\diabetes_model.sav","rb"))
-heart_model = pickle.load(open(r"C:\Users\lalit\Desktop\Projects\multi project in one\Multiple Disease Prediction System\ML models\heart_model.sav","rb"))
-par_model = pickle.load(open(r"C:\Users\lalit\Desktop\Projects\multi project in one\Multiple Disease Prediction System\ML models\parkinsons.sav","rb"))
+dia_model = pickle.load(open("diabetes_model.sav","rb"))
+heart_model = pickle.load(open("heart_model.sav","rb"))
+par_model = pickle.load(open("parkinsons.sav","rb"))
 
 
 sm.title("Multiple Disease Prediction System")
