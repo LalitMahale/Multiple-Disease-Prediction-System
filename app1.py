@@ -238,22 +238,14 @@ else:
                 
     if helps == "Parkinsons Prediction":
         
-            data = {"Variable" : ["'MDVP:Fo(Hz)","MDVP:Fhi(Hz)","MDVP:Fhi(Hz)","MDVP:Shimmer,MDVP:Shimmer(dB),Shimmer:APQ3,Shimmer:APQ5,MDVP:APQ,Shimmer:DDA",
-                                  "NHR,HNR","status","RPDE,D2","DFA","spread1,spread2,PPE"],
-                    "Description" : ["Average vocal fundamental frequency","Maximum vocal fundamental frequency","Maximum vocal fundamental frequenc",
-                                     "Several measures of variation in fundamental frequency","Several measures of variation in amplitude","Two measures of ratio of noise to tonal components in the voice",
-                                     "Health status of the subject (one) - Parkinson's, (zero) - healthy"," Two nonlinear dynamical complexity measures","Signal fractal scaling exponent",
-                                     "Three nonlinear measures of fundamental frequency variation"]}
-            df = pd.DataFrame(data)
-            sm.table(df)
-            ##sm.write('''MDVP:Fo(Hz) - Average vocal fundamental frequency''')
-            #sm.write('''MDVP:Fhi(Hz) - Maximum vocal fundamental frequency ''')
-           # sm.write('''MDVP:Fhi(Hz) - Maximum vocal fundamental frequency''')
-           # sm.write('''MDVP:Fhi(Hz - Several measures of variation in fundamental frequency''')
-           # sm.write('''MDVP:Shimmer,MDVP:Shimmer(dB),Shimmer:APQ3,Shimmer:APQ5,MDVP:APQ,Shimmer:DDA - Several measures of variation in amplitude ''')
-           # sm.write('''NHR,HNR - Two measures of ratio of noise to tonal components in the voice''')
-           # sm.write('''status - Health status of the subject (one) - Parkinson's, (zero) - healthy ''')
-           # sm.write('''RPDE,D2 - Two nonlinear dynamical complexity measures''')
-           # sm.write('''DFA - Signal fractal scaling exponent''')
-           # sm.write('''spread1,spread2,PPE - Three nonlinear measures of fundamental frequency variation''')
-#["","","","","""","","","","","","","""","","",""]}
+          
+            sm.write('''MDVP:Fo(Hz) - Average vocal fundamental frequency''')
+            sm.write('''MDVP:Fhi(Hz) - Maximum vocal fundamental frequency ''')
+            sm.write('''MDVP:Fhi(Hz) - Maximum vocal fundamental frequency''')
+            sm.write('''MDVP:Fhi(Hz - Several measures of variation in fundamental frequency''')
+            sm.write('''MDVP:Shimmer,MDVP:Shimmer(dB),Shimmer:APQ3,Shimmer:APQ5,MDVP:APQ,Shimmer:DDA - Several measures of variation in amplitude ''')
+            sm.write('''NHR,HNR - Two measures of ratio of noise to tonal components in the voice''')
+            sm.write('''status - Health status of the subject (one) - Parkinson's, (zero) - healthy ''')
+            sm.write('''RPDE,D2 - Two nonlinear dynamical complexity measures''')
+            sm.write('''DFA - Signal fractal scaling exponent''')
+            sm.write('''spread1,spread2,PPE - Three nonlinear measures of fundamental frequency variation''')
