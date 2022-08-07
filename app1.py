@@ -1,5 +1,6 @@
 import streamlit as sm
 import pickle
+import pandas as pd
 
 dia_model = pickle.load(open("diabetes_model.sav","rb"))
 heart_model = pickle.load(open("heart_model.sav","rb"))
@@ -243,6 +244,8 @@ else:
                                      "Several measures of variation in fundamental frequency","Several measures of variation in amplitude","Two measures of ratio of noise to tonal components in the voice",
                                      "Health status of the subject (one) - Parkinson's, (zero) - healthy"," Two nonlinear dynamical complexity measures","Signal fractal scaling exponent",
                                      "Three nonlinear measures of fundamental frequency variation"]}
+            df = pd.DataFrame(data)
+            sm.table(df)
             ##sm.write('''MDVP:Fo(Hz) - Average vocal fundamental frequency''')
             #sm.write('''MDVP:Fhi(Hz) - Maximum vocal fundamental frequency ''')
            # sm.write('''MDVP:Fhi(Hz) - Maximum vocal fundamental frequency''')
